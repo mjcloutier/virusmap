@@ -1,0 +1,26 @@
+<h1>Listing Diagnoses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for diagnosis <- @diagnoses do %>
+    <tr>
+      <td><%= diagnosis.name %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.diagnosis_path(@conn, :show, diagnosis) %></span>
+        <span><%= link "Edit", to: Routes.diagnosis_path(@conn, :edit, diagnosis) %></span>
+        <span><%= link "Delete", to: Routes.diagnosis_path(@conn, :delete, diagnosis), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Diagnosis", to: Routes.diagnosis_path(@conn, :new) %></span>

@@ -1,0 +1,46 @@
+<h1>Listing Viruses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Cured at</th>
+      <th>Diagnosed</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Location</th>
+      <th>State</th>
+      <th>Symptoms</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for virus <- @viruses do %>
+    <tr>
+      <td><%= virus.address %></td>
+      <td><%= virus.address2 %></td>
+      <td><%= virus.city %></td>
+      <td><%= virus.country %></td>
+      <td><%= virus.cured_at %></td>
+      <td><%= virus.diagnosed %></td>
+      <td><%= virus.lat %></td>
+      <td><%= virus.lng %></td>
+      <td><%= virus.location %></td>
+      <td><%= virus.state %></td>
+      <td><%= virus.symptoms %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.virus_path(@conn, :show, virus) %></span>
+        <span><%= link "Edit", to: Routes.virus_path(@conn, :edit, virus) %></span>
+        <span><%= link "Delete", to: Routes.virus_path(@conn, :delete, virus), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Virus", to: Routes.virus_path(@conn, :new) %></span>

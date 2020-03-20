@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= assigns[:page_title] || "Virusmap · Report Your Symptoms" %></title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
+
+    <%= csrf_meta_tag() %>
+  </head>
+
+  <body>
+    <div class="container-for-admin">
+      <%= render "header.html", assigns %>
+
+      <main role="main" class="pt-5 mx-lg-12">
+        <%= if get_flash(@conn, :info) do %>
+          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <% end %>
+
+        <%= if get_flash(@conn, :error) do %>
+          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <% end %>
+
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+      <%= render "footer.html", assigns %>
+    </div>
+
+    <script type="text/javascript" data-turbolinks-suppress-warning data-turbolinks-track="reload" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" data-turbolinks-suppress-warning data-turbolinks-track="reload" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<h1>Show Diagnosis</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @diagnosis.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.diagnosis_path(@conn, :edit, @diagnosis) %></span>
+<span><%= link "Back", to: Routes.diagnosis_path(@conn, :index) %></span>

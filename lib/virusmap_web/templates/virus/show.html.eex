@@ -1,0 +1,63 @@
+<h1>Show Virus</h1>
+
+<ul>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @virus.address %>
+  </li>
+
+  <li>
+    <strong>Address2:</strong>
+    <%= @virus.address2 %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @virus.city %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @virus.country %>
+  </li>
+
+  <li>
+    <strong>Cured at:</strong>
+    <%= @virus.cured_at %>
+  </li>
+
+  <li>
+    <strong>Diagnosed:</strong>
+    <%= @virus.diagnosed %>
+  </li>
+
+  <li>
+    <strong>Lat:</strong>
+    <%= @virus.lat %>
+  </li>
+
+  <li>
+    <strong>Lng:</strong>
+    <%= @virus.lng %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @virus.location %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @virus.state %>
+  </li>
+
+  <li>
+    <strong>Symptoms:</strong>
+    <%= @virus.symptoms %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.virus_path(@conn, :edit, @virus) %></span>
+<span><%= link "Back", to: Routes.virus_path(@conn, :index) %></span>
