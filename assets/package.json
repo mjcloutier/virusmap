@@ -31,7 +31,10 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-phoenix": "file:../deps/react_phoenix",
-    "turbolinks": "^5.0.0"
+    "supercluster": "^7.0.0",
+    "swr": "^0.1.18",
+    "turbolinks": "^5.0.0",
+    "use-supercluster": "^0.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

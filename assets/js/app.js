@@ -22,7 +22,7 @@ import Turbolinks from 'turbolinks';
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
 
-import SimpleMap from './components/simple_map.jsx';
+import SimpleMap from './components/maps/simple_map.jsx';
 
 Turbolinks.start();
 
