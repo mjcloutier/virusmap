@@ -13,7 +13,7 @@ config :virusmap,
 # Configures the endpoint
 config :virusmap, VirusmapWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "R7ys4dfhdARNWdhURHs8Edmv7DOOO0dUN051Of7LJODZRx1zKDCKX5Dj7DcAJA/W",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: VirusmapWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Virusmap.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "jPwIQINz"]
@@ -39,7 +39,7 @@ config :virusmap, :pow,
 
 # Configure google_maps
 config :google_maps,
-  api_key: "AIzaSyDPud43hAXwyKatyGD_5iJon9xN5BDhpxo"
+  api_key: System.get_env("GOOGLE_MAPS_API")
 
 # Configure phoenix-active-link
 config :phoenix_active_link, :defaults,
